@@ -26,15 +26,12 @@ body {
     box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
 }
 
-.calculator > div:not(:first-child):hover {
+.calculator > button:not(:first-child):hover {
     opacity: 0.85;
 }
 
 .display {
     grid-column: 1/5;
-}
-
-#display {
     border: none;
     text-align: right;
     width: 100%;
