@@ -13,28 +13,43 @@
 </head>
 <body>
 <div class="container">
-    <div class="calculator">
-        <input class="display" id="display" disabled type="text" value="0">
-        <button class="control" value="ac">Ac</button>
-        <button class="control" value="del">Del</button>
-        <button class="control">√</button>
-        <button class="control" value="sq">Sq</button>
-        <button class="digit" value="1">1</button>
-        <button class="digit" value="2">2</button>
-        <button class="digit" value="3">3</button>
-        <button class="operation" value="/">/</button>
-        <button class="digit" value="4">4</button>
-        <button class="digit" value="5">5</button>
-        <button class="digit" value="6">6</button>
-        <button class="operation" value="*">*</button>
-        <button class="digit" value="7">7</button>
-        <button class="digit" value="8">8</button>
-        <button class="digit" value="9">9</button>
-        <button class="operation" value="+">+</button>
-        <button class="digit" value=".">.</button>
-        <button class="digit" value="0">0</button>
-        <button class="equal" value="=">=</button>
-        <button class="operation" value="-">-</button>
+    <div class="iphone">
+        <div class="circle"></div>
+        <div class="container-camera-speaker">
+            <div class="camera"></div>
+            <div class="speaker"></div>
+        </div>
+        <div class="screen">
+            <div class="calculator">
+                <input class="display" id="display" disabled type="text" value="0">
+                <button class="ac-button" data-control="ac">Ac</button>
+                <button class="del-button" data-control="del">Del</button>
+                <button class="pow-button" data-operation="pow">x^</button>
+                <button class="top-buttons" data-control="minus">&plusmn;</button>
+                <button class="top-buttons" data-control="root">√</button>
+                <button class="digit-block" data-digit="1">1</button>
+                <button class="digit-block" data-digit="2">2</button>
+                <button class="digit-block" data-digit="3">3</button>
+                <button class="right-side-buttons" data-operation="/">&divide;</button>
+                <button class="digit-block" data-digit="4">4</button>
+                <button class="digit-block" data-digit="5">5</button>
+                <button class="digit-block" data-digit="6">6</button>
+                <button class="right-side-buttons" data-operation="*">&times;</button>
+                <button class="digit-block" data-digit="7">7</button>
+                <button class="digit-block" data-digit="8">8</button>
+                <button class="digit-block" data-digit="9">9</button>
+                <button class="right-side-buttons" data-operation="-">-</button>
+                <button class="digit-block" data-digit=".">.</button>
+                <button class="digit-block" data-digit="0">0</button>
+                <button class="digit-block" data-equal="=">=</button>
+                <button class="right-side-buttons" data-operation="+">+</button>
+
+            </div>
+        </div>
+        <div class="container-home">
+            <div class="home1"></div>
+            <div class="home2"></div>
+        </div>
     </div>
 </div>
 <script src="script.js"></script>

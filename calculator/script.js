@@ -1,23 +1,23 @@
-const digits = document.querySelectorAll('.digit')
-const operations = document.querySelectorAll('.operation')
+const digits = document.querySelectorAll('[data-digit]')
+const operations = document.querySelectorAll('[data-operation]')
 const display = document.getElementById('display')
-const controls = document.querySelectorAll('.control')
-const equal = document.querySelector('.equal')
+const controls = document.querySelectorAll('[data-control]')
+const equal = document.querySelector('[data-equal]')
 
 let prevNum = ''
-let newNum = ''
+let newNum = 0
 let result = ''
 let operatorType = ''
 let decimalUsed = false
 
 digits.forEach(item => item.addEventListener('click', e => {
-    const num = e.target.value
+    const num = e.target.dataset.digit
     if (result) {
         newNum = num
         result = ''
     } else {
         if (num === '.') {
-            if (decimalUsed !== true) {
+            if (!decimalUsed) {
                 newNum += num
                 decimalUsed = true
             }
@@ -25,20 +25,16 @@ digits.forEach(item => item.addEventListener('click', e => {
             newNum += num
         }
     }
-    display.value = newNum
+    display.value = parseFloat(newNum)
 }))
 
 operations.forEach(item => item.addEventListener('click', e => {
-    let operator = e.target.value
-    if (!result) {
-        prevNum = newNum
-    } else {
-        prevNum = result
-    }
+    const operator = e.target.dataset.operation
+    !result ? prevNum = newNum : prevNum = result
     newNum = ''
     decimalUsed = false
     operatorType = operator
-    result = ''
+    result = 0
 }))
 
 equal.addEventListener('click', () => {
@@ -59,19 +55,23 @@ equal.addEventListener('click', () => {
         case '/':
             result = prevNum / newNum
             break
+        case 'pow':
+            result = Math.pow(prevNum, newNum)
+            break
         default:
             result = newNum
     }
 
+    result = Math.round(result*1000000)/1000000;
     prevNum = result
     display.value = result
 })
 
-controls.forEach(item => item.addEventListener('click', () => {
-    switch (item.value) {
+controls.forEach(item => item.addEventListener('click', e => {
+    switch (e.target.dataset.control) {
         case 'ac':
             prevNum = ''
-            newNum = ''
+            newNum = 0
             result = ''
             operatorType = ''
             decimalUsed = false
@@ -80,8 +80,15 @@ controls.forEach(item => item.addEventListener('click', () => {
         case 'del':
             if (!result) {
                 newNum = newNum.slice(0, newNum.length - 1)
-                display.value = newNum
+                newNum === '' ? newNum = '0' : display.value = parseFloat(newNum)
             }
             break
+        case 'root':
+            result = Math.sqrt(result || prevNum ||  newNum)
+            display.value = result
+            break
+        case 'minus':
+            newNum = -newNum
+            display.value = newNum
     }
 }))
