@@ -15,9 +15,15 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px 0;
+}
+
+.about {
+    margin-top: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
 }
 /* END COMMON STYLES*/
 
@@ -25,11 +31,15 @@ body {
 /*CALCULATOR*/
 .calculator {
     display: grid;
+    position: relative;
+    top: 0;
     grid-template-columns: repeat(4, 50px);
     grid-template-rows: 60px repeat(6, 50px);
     grid-gap: 8px;
     background-color: #000000;
     padding: 10px;
+    transition: .3s linear;
+    z-index: 1;
 }
 
 .calculator > button:not(:first-child):hover {
@@ -137,9 +147,13 @@ body {
 }
 
 .screen {
+    position: relative;
     border: 3px solid #333;
     margin-top: 22px;
     border-radius: 5px;
+    overflow: hidden;
+    background: url('./assets/back-belarus.PNG') no-repeat;
+    background-size: cover;
 }
 
 .container-home {
@@ -157,6 +171,7 @@ body {
     background: #fff;
     border-radius: 50%;
     z-index: 2;
+    cursor: pointer;
 }
 
 .home2 {

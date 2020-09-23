@@ -3,6 +3,8 @@ const operations = document.querySelectorAll('[data-operation]')
 const display = document.getElementById('display')
 const controls = document.querySelectorAll('[data-control]')
 const equal = document.querySelector('[data-equal]')
+const homeButton = document.querySelector('.home1')
+const calculator = document.querySelector('.calculator')
 
 let prevNum = ''
 let newNum = 0
@@ -88,7 +90,18 @@ controls.forEach(item => item.addEventListener('click', e => {
             display.value = result
             break
         case 'minus':
-            newNum = -newNum
-            display.value = newNum
+            if (newNum && !result) {
+                newNum = -newNum
+                display.value = newNum
+            } else {
+                result = -result
+                display.value = result
+            }
     }
 }))
+
+homeButton.addEventListener('click', () => {
+    !calculator.style.top
+        ? calculator.style.top = '434px'
+        : calculator.style.top = ''
+})
