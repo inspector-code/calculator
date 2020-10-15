@@ -13,19 +13,59 @@ body {
     background: url('./assets/back.png') repeat;
 }
 
-.container {
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    margin-left: 50px;
+    font-size: 1.6rem;
+    line-height: 110%;
+    color: #353535;
+}
+
+p {
+    margin: 10px 0;
+}
+
+li img {
+    vertical-align: bottom;
+    display: inline-block;
+    height: 25px;
+    margin: 0 8px;
+}
+
+.container-inner {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    width: 700px;
+    padding: 20px 10px;
+    margin: 0 auto;
+}
+
+@media (max-width: 699px) {
+    .container-inner {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .iphone {
+        margin-bottom: 20px;
+    }
 }
 
 .about {
-    margin-top: 20px;
     font-family: 'Caveat', cursive;
     font-size: 2rem;
-    text-align: center;
     padding: 0 20px;
+}
+
+.about__paragraph {
+    margin-bottom: 20px;
 }
 /* END COMMON STYLES*/
 
@@ -193,6 +233,3 @@ body {
     background: linear-gradient(#e2e3e4, #7f8282);
 }
 /*END IPHONE*/
-
-
-
