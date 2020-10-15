@@ -43,10 +43,20 @@ li img {
     margin: 0 auto;
 }
 
+.about {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    padding: 0 20px;
+}
+
+.about__paragraph {
+    margin-bottom: 20px;
+}
+
 @media (max-width: 699px) {
     .container-inner {
         flex-direction: column;
-        max-width: 400px;
+        max-width: 375px;
     }
 
     p {
@@ -56,16 +66,10 @@ li img {
     .iphone {
         margin-bottom: 20px;
     }
-}
 
-.about {
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    padding: 0 20px;
-}
-
-.about__paragraph {
-    margin-bottom: 20px;
+    .about {
+        padding: 0;
+    }
 }
 /* END COMMON STYLES*/
 

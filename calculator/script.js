@@ -79,7 +79,7 @@ operations.forEach(item => item.addEventListener('click', e => {
     const operator = e.target.dataset.operation
     !result && prevNum && newNum && calcResult()
     !result ? prevNum = newNum : prevNum = result
-    newNum = ''
+    newNum = '0'
     decimalUsed = false
     operatorType = operator
     result = 0
