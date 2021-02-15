@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: url('./assets/back.png') repeat;
+    background: url('assets/back.png') repeat;
 }
 
 ol {
@@ -204,7 +204,7 @@ li img {
     margin-top: 22px;
     border-radius: 5px;
     overflow: hidden;
-    background: url('./assets/back-belarus.PNG') no-repeat;
+    background: url('assets/back-belarus.PNG') no-repeat;
     background-size: cover;
 }
 
